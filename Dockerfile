@@ -23,4 +23,4 @@ VOLUME /downloads
 
 # Start SABnzbd
 EXPOSE 8080 9090
-CMD ["/SABnzbd-0.7.20/SABnzbd.py", "-d --config=/config/sabnzbd.ini"]
+CMD ["/SABnzbd-0.7.20/SABnzbd.py", "-d", "--config=/config/sabnzbd.ini"]
