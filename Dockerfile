@@ -3,9 +3,10 @@ FROM centos:latest
 MAINTAINER Jonathan Ervine <jon.ervine@gmail.com>
 ENV container docker
 
-# Install updates and EPEL for SABnzbd pre-requisites
+# Install updates and enable EPEL and repoforge repositories for SABnzbd pre-requisites
 RUN yum update -y; yum clean all
 RUN yum install -y http://mirror.pnl.gov/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+RUN yum install -y http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
 RUN yum install -y openssh-server
 #RUN yum install -y openssh-server tar gzip python-cheetah python-yenc par2cmdline unzip pyOpenSSL unrar
 RUN yum clean all;
