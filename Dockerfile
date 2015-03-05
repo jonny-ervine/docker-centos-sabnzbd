@@ -14,6 +14,10 @@ RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
 #    sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
 #    sed -i "s/UsePAM.*/UsePAM yes/g" /etc/ssh/sshd_config
 
+# Download and extract SABnzbd from sourceforge
+RUN curl http://jaist.dl.sourceforge.net/project/sabnzbdplus/sabnzbdplus/0.7.20/SABnzbdplus-0.7.20-src.tar.gz > SABnzbd.tar.gz
+RUN tar zxvf SABnzbd.tar.gz
+
 RUN echo "root:changeme" | chpasswd
 
 # Start sshd
