@@ -6,6 +6,7 @@ ENV container docker
 # Install updates and EPEL for SABnzbd pre-requisites
 RUN yum update -y; yum clean all
 RUN yum install -y http://mirror.pnl.gov/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+RUN yum install -y openssh-server
 #RUN yum install -y openssh-server tar gzip python-cheetah python-yenc par2cmdline unzip pyOpenSSL unrar
 RUN yum clean all;
 #RUN rm -f /etc/ssh/ssh_host_ecdsa_key /etc/ssh/ssh_host_rsa_key && \
