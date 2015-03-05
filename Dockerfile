@@ -21,6 +21,10 @@ RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
 # Download and extract SABnzbd from sourceforge
 RUN curl http://jaist.dl.sourceforge.net/project/sabnzbdplus/sabnzbdplus/0.7.20/SABnzbd-0.7.20-src.tar.gz > /SABnzbd.tar.gz
 RUN tar zxvf /SABnzbd.tar.gz
+RUN rm /SABnzbd.tar.gz
+
+VOLUME /config
+VOLUME /downloads
 
 RUN echo "root:changeme" | chpasswd
 
