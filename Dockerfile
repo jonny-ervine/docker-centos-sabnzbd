@@ -25,5 +25,5 @@ RUN tar zxvf /SABnzbd.tar.gz
 RUN echo "root:changeme" | chpasswd
 
 # Start sshd - this to be removed in favour of starting SABnzbd when completed
-EXPOSE 22 8080 8090
+EXPOSE 22 8080 9090
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
