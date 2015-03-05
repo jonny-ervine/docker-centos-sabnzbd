@@ -8,6 +8,8 @@ RUN yum update -y; yum clean all
 RUN yum install -y http://mirror.pnl.gov/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 RUN yum install -y http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
 RUN yum install -y openssh-server tar gzip python-cheetah par2cmdline unzip pyOpenSSL unrar
+ADD python-yenc-0.4.0-4.el7.centos.x86_64.rpm
+RUN yum install -y python-yenc-0.4.0-4.el7.centos.x86_64.rpm
 RUN yum clean all;
 RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
