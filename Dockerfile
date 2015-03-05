@@ -12,7 +12,7 @@ RUN yum install -y openssh-server tar gzip python-cheetah par2cmdline unzip pyOp
 ADD python-yenc-0.4.0-4.el7.centos.x86_64.rpm /python-yenc-0.4.0-4.el7.centos.x86_64.rpm
 RUN yum install -y /python-yenc-0.4.0-4.el7.centos.x86_64.rpm
 RUN rm -f /python-yenc-0.4.0-4.el7.centos.x86_64.rpm
-RUN yum clean all;
+RUN yum clean all
 RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_ecdsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
 #    sed -i "s/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
