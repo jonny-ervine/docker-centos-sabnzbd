@@ -7,6 +7,7 @@ ENV container docker
 RUN yum update -y; yum clean all
 RUN yum install -y http://mirror.pnl.gov/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 RUN yum install -y http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+#RUN yum install -y tar gzip python-cheetah par2cmdline unzip pyOpenSSL unrar
 RUN yum install -y openssh-server tar gzip python-cheetah par2cmdline unzip pyOpenSSL unrar
 ADD python-yenc-0.4.0-4.el7.centos.x86_64.rpm
 RUN yum install -y python-yenc-0.4.0-4.el7.centos.x86_64.rpm
@@ -22,6 +23,6 @@ RUN tar zxvf SABnzbd.tar.gz
 
 RUN echo "root:changeme" | chpasswd
 
-# Start sshd
+# Start sshd - this to be removed in favour of starting SABnzbd when completed
 EXPOSE 22
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
