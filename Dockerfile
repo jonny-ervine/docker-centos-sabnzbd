@@ -30,4 +30,5 @@ RUN echo "root:changeme" | chpasswd
 
 # Start sshd - this to be removed in favour of starting SABnzbd when completed
 EXPOSE 22 8080 9090
-ENTRYPOINT ["/usr/sbin/sshd", "-D"]
+CMD ["/SABnzbd-0.7.20/SABnzbd.py", "--config=/config/sabnzbd.ini"]
+#ENTRYPOINT ["/SABnzbd-0.7.20/SABnzbd.py", "--config=/config/sabnzbd.ini"]
