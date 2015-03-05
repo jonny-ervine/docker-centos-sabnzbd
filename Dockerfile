@@ -23,4 +23,4 @@ VOLUME /downloads
 
 # Start SABnzbd
 EXPOSE 8080 9090
-ENTRYPOINT ["/SABnzbd-0.7.20/SABnzbd.py", "--config-file=/config/sabnzbd.ini", "-d"]
+ENTRYPOINT ["/SABnzbd-0.7.20/SABnzbd.py", "--config-file", "/config/sabnzbd.ini", "-d"]
