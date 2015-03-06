@@ -19,6 +19,6 @@ The container can be started as follows:
 
 The container can be verified on the host by using:
   docker logs <container id/container name?
-  cat /<config directory on host>/logs/sabnzbd.log
+  cat /\<config directory on host\>/logs/sabnzbd.log
 
 Please note that the SELinux permissions of the config and downloads directories may need to be changed/corrected as necessary.
