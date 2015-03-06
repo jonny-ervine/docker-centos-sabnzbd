@@ -15,7 +15,7 @@ The SABnzbd software package is downloaded as a tarball from sourceforge and the
 
 The container can be started as follows:
   docker pull jervine/docker-centos-sabnzbd
-  docker run -d -h <optional host name of container> -v /<config directory on host>:/config -v /<download directory on host>:/downloads -p 8080:8080 -p 9090:9090 jervine/docker-centos-sabnzbd
+  docker run -d -h <optional host name of container> -v /\<config directory on host\>:/config -v /\<download directory on host\>:/downloads -p 8080:8080 -p 9090:9090 jervine/docker-centos-sabnzbd
 
 The container can be verified on the host by using:
   docker logs <container id/container name?
