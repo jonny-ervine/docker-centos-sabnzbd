@@ -26,4 +26,4 @@ VOLUME /downloads
 
 # Start SABnzbd
 EXPOSE 8080 9090 9002
-ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+ENTRYPOINT ["/usr/bin/supervisord", "-n", -c", "/etc/supervisord.conf"]
