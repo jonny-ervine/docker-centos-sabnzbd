@@ -20,10 +20,11 @@ RUN rm /SABnzbd.tar.gz
 
 ADD supervisord.conf /etc/supervisord.conf
 ADD sabnzbd.ini /etc/supervisord.d/sabnzbd.ini
+ADD start.sh /usr/sbin/start.sh
 
 VOLUME /config
 VOLUME /downloads
 
 # Start SABnzbd
 EXPOSE 8080 9090 9002
-ENTRYPOINT ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
+ENTRYPOINT ["/usr/sbin/start.sh"]
