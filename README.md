@@ -17,10 +17,12 @@ The SABnzbd daemon is controlled via the supervisord daemon which has a web fron
 
 The SABnzbd software package is downloaded as a tarball from sourceforge and then extracted into the docker container ready for use.
 
-The container can be started as follows:
+The container can be run as follows:
 
     docker pull jervine/docker-centos-sabnzbd
-    docker run -d -h <optional host name of container> -v /<config directory on host>:/config -v /<download directory on host>:/downloads -p 8080:8080 -p 9090:9090 -p 9002:9002 jervine/docker-centos-sabnzbd
+    docker run -d -n <optional name of container> -h <optional host name of container> -e TZ="<optional timezone> -v /<config directory on host>:/config -v /<download directory on host>:/downloads -p 8080:8080 -p 9090:9090 -p 9002:9002 jervine/docker-centos-sabnzbd
+
+THe TZ variable allows the user to set the correct timezone for the container and should take the form "Europe/London". If no timezone is specified then UTC is used by default.
 
 The container can be verified on the host by using:
 
